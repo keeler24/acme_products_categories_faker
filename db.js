@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('postgres://localhost/acme_faker');
+const sequelize = new Sequelize(process.env.DATABASE_URL);
 const faker = require('faker')
 
 //product fake name generator
