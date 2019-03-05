@@ -66,20 +66,22 @@ class App extends Component{
         const {products} = this.state;
         return (
             <div>
+                <h1>Companies and Products Fake Name Generator</h1>
                 <button onClick = {() => this.addCategory()} >ADDDD FAKE COMPANY</button>
+                <hr></hr>
                 <ul>
                 {
                     companies.map(company => {
                         return( 
                             <div key = {company.id}>
-                                <li >{company.name} <button onClick={()=> this.addProduct(company.id)}>+</button> <button onClick={() => this.removeCategory(company.id)}>-</button></li>
+                                <li className="list-group-item list-group-item-info">{company.name} <button onClick={()=> this.addProduct(company.id)}>+</button> <button onClick={() => this.removeCategory(company.id)}>-</button></li>
                                 
                                 
                                 { <ul>
                                     {
                                         products.filter(product => product.CategoryId === company.id).map(product => {
                                             return(
-                                                <li key = {product.id}>{product.name} <button onClick={()=> this.removeProduct(product.id)}>-</button></li>
+                                                <li className="list-group-item list-group-item-warning" key = {product.id}>{product.name} <button onClick={()=> this.removeProduct(product.id)}>-</button></li>
                                             )
                                         })
                                             
