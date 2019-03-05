@@ -1,0 +1,4 @@
+.gitgnore
+models/
+node_modules/
+seed.js
